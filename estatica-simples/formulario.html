@@ -4,19 +4,19 @@
 <title>SI 1 - Cadastro</title>
 </head>
 
-<body bgcolor="gray">
-<form>
+<body bgcolor="0033FF">
 <h1>SI 1 - Cadastro</h1><br>
 
-<form name="input" action="cadastrado.html" method="get">
-Nome Completo: <input type="text" name="nome"><br>
+<form name="input" method="post" action="cadastrado.html">
+Nome Completo: <input type="text" name="nome"><br /><br />
 
-Matricula: <input type="text" name="matricula"><br>
-<input type="submit" value= "Submeter">
+Matricula: <input type="text" name="matricula"><br /><br />
 
-<a href="cadastrado.html">Cadastrar</a>
+Email: <input type="text" name="email"><br /><br />
 
-</form>
+Interesses:<br /><textarea name="interesses" rows="5" cols="40">Descreva suas expectativas acerca da disciplina.</textarea><br /><br />
+<input type="submit" name="submeter" value= "Submeter">
+
 </body>
 
 </html>
