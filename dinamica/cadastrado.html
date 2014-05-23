@@ -28,20 +28,14 @@
 	
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
-$(document).keypress(function(e) {
-    // enter pressed
-	$('#select-to option:selected').each( function() {
-            $('#select-to').append($document.getElementById("cx").value+$document.getElementById("cx").text());
-			
-			//$('#select-to').append("<input value='"+$(this).val()+"'>"+$(this).text()+"</input>");
-        });
-});
 
 $(document).ready(function() {
- 
-    $('#btn-add').click(function(){
+	$('#btn-inserir').click(function(){
+	$('#select-to').append("<option value='"+$(tema).val()+"'>"+$(tema).val()+"</option>");        
+});
+    
+	$('#btn-add').click(function(){
         $('#select-to option:selected').each( function() {
-                //$('#select-to').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
             $(this).remove();
         });
     });
@@ -88,10 +82,6 @@ $(document).ready(function() {
     <select name="selectfrom" id="select-from" multiple size="20">
       <option>Temas Aprendidos</option>
 	  <option></option>
-	  <option value="1">Item 1</option>
-      <option value="2">Item 2</option>
-      <option value="3">Item 3</option>
-      <option value="4">Item 4</option>
     </select>
 
     <a href="JavaScript:void(0);" id="btn-remove">&laquo; Aprendido</a>
@@ -99,16 +89,14 @@ $(document).ready(function() {
     <select name="selectto" id="select-to" multiple size="20">
       <option>Temas a Aprender</option>
 	  <option></option>
-	  <option value="5">Item 5</option>
-      <option value="6">Item 6</option>
-      <option value="7">Item 7</option>
     </select>
 	
 	 <a href="JavaScript:void(0);" id="btn-add">Remover &raquo;</a>
  
 	</form>
 	
-		<input value="1" name = "caixa" id = "cx" type="text" placeholder="Novo tema" required>
+		<input id="tema" name = "caixa" type="text" placeholder="Novo tema" required>
+		<a href="JavaScript:void(0);" id="btn-inserir">&laquo; Inserir tema</a>
 
     </div><!-- /.container -->
 
