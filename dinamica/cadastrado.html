@@ -26,11 +26,39 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-	<link rel="stylesheet" type="text/css" href="style.css" />
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$(document).keypress(function(e) {
+    // enter pressed
+	$('#select-to option:selected').each( function() {
+            $('#select-to').append($document.getElementById("cx").value+$document.getElementById("cx").text());
+			
+			//$('#select-to').append("<input value='"+$(this).val()+"'>"+$(this).text()+"</input>");
+        });
+});
+
+$(document).ready(function() {
+ 
+    $('#btn-add').click(function(){
+        $('#select-to option:selected').each( function() {
+                //$('#select-to').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+            $(this).remove();
+        });
+    });
+    $('#btn-remove').click(function(){
+        $('#select-to option:selected').each( function() {
+            $('#select-from').append("<option value='"+$(this).val()+"'>"+$(this).text()+"</option>");
+            $(this).remove();
+        });
+    });
+ 
+});
+</script>
+<link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
-
+  
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -54,6 +82,33 @@
         <h1>Obrigado!</h1>
         <p class="lead">A sua matrícula foi realizada com sucesso, clique <a href="index.html">aqui</a> para voltar a página inicial.</p>
       </div>
+	  
+	  <form>
+ 
+    <select name="selectfrom" id="select-from" multiple size="20">
+      <option>Temas Aprendidos</option>
+	  <option></option>
+	  <option value="1">Item 1</option>
+      <option value="2">Item 2</option>
+      <option value="3">Item 3</option>
+      <option value="4">Item 4</option>
+    </select>
+
+    <a href="JavaScript:void(0);" id="btn-remove">&laquo; Aprendido</a>
+
+    <select name="selectto" id="select-to" multiple size="20">
+      <option>Temas a Aprender</option>
+	  <option></option>
+	  <option value="5">Item 5</option>
+      <option value="6">Item 6</option>
+      <option value="7">Item 7</option>
+    </select>
+	
+	 <a href="JavaScript:void(0);" id="btn-add">Remover &raquo;</a>
+ 
+	</form>
+	
+		<input value="1" name = "caixa" id = "cx" type="text" placeholder="Novo tema" required>
 
     </div><!-- /.container -->
 
